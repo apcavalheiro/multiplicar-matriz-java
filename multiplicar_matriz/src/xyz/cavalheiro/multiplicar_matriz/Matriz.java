@@ -4,48 +4,42 @@ import java.util.Random;
 
 public class Matriz {
 	private static Random random = new Random();
-	private int[][] matriz;
-	private int[][] matriz1;
+	private int[][] multiplicador;
+	private int[][] multiplicando;
 	private int[][] produto;
 
 	public Matriz(int[][] matriz, int[][] matriz1, int[][] produto) {
 		super();
-		this.matriz = matriz;
-		this.matriz1 = matriz1;
+		this.multiplicador = matriz;
+		this.multiplicando = matriz1;
 		this.produto = produto;
 	}
-	
-	
-	public int[][] getMatriz() {
-		return matriz;
-	}
 
+	public int[][] getMatriz() {
+		return multiplicador;
+	}
 
 	public void setMatriz(int[][] matriz) {
-		this.matriz = matriz;
+		this.multiplicador = matriz;
 	}
-
 
 	public int[][] getMatriz1() {
-		return matriz1;
+		return multiplicando;
 	}
-
 
 	public void setMatriz1(int[][] matriz1) {
-		this.matriz1 = matriz1;
+		this.multiplicando = matriz1;
 	}
-
 
 	public int[][] getProduto() {
 		return produto;
 	}
 
-
 	public void setProduto(int[][] produto) {
 		this.produto = produto;
 	}
 
-	public static void inicializarMatrizes(int[][] matriz, int[][] matriz1,int numAleatrorio) {
+	public static void inicializarMatriz(int[][] matriz, int[][] matriz1,int numAleatrorio) {
 		for (int i=0; i<matriz.length; i++) {			
 			for (int j=0; j<matriz.length; j++) {
 				matriz[i][j] = random.nextInt(numAleatrorio);
@@ -58,7 +52,7 @@ public class Matriz {
 		}
 	}
 
-	public static void multiplicarMatrizes(int[][] matriz, int[][] matriz1, int[][] produto) {
+	public static void multiplicarMatriz(int[][] matriz, int[][] matriz1, int[][] produto) {
 		for (int i=0; i<matriz.length; i++) {
 			for (int j=0; j<matriz.length; j++) {	
 				for (int k=0; k<matriz.length; k++) {
@@ -68,8 +62,8 @@ public class Matriz {
 		}
 	}
 
-	public static void exibirMatrizes(int[][] matriz, int[][] matriz1, int[][] produto) {
-		System.out.print("1ª Matriz_________________________\n");
+	public static void exibirMatriz(int[][] matriz, int[][] matriz1, int[][] produto) {
+		System.out.print("1ª Matriz___________________\n");
 		for (int i=0; i<matriz.length; i++) {
 			System.out.print((i+1)+"ª. linha: ");
 			for (int j=0; j<matriz.length; j++) {
@@ -78,7 +72,7 @@ public class Matriz {
 			System.out.println();
 		}
 
-		System.out.print("\n2ª Matriz_________________________\n");
+		System.out.print("\n2ª Matriz________________\n");
 		for (int i=0; i<matriz.length; i++) {
 			System.out.print((i+1)+"ª. linha: ");
 			for (int j=0; j<matriz.length; j++) {
@@ -87,7 +81,7 @@ public class Matriz {
 			System.out.println();
 		}
 
-		System.out.printf("\nProduto___________________________\n");
+		System.out.printf("\nProduto__________________\n");
 		for (int i=0; i<matriz.length; i++)  {
 			System.out.print((i+1)+"ª. linha: ");
 			for (int j=0; j<matriz.length; j++){
